@@ -1,17 +1,14 @@
 list = [1,9,23,45,754,235,35,467]
-n = len(list)
-print(list)
-list2 = []
-list2.append(list[0])
 
 def sortlist(list):
-  for s in range(1,n,1):
-    j = s-1
-    while list[s] < list2[j] and j >= 0:
+  list2 = []
+  for s in range(len(list)):
+    j = s
+    while j > 0 and list[s] < list2[j-1]:
       j -= 1
     else:
-      list2.insert(j+1,list[s])
+      list2.insert(j,list[s])
   return list2
 
-sortlist(list)
-print(list2)
+result = sortlist(list)
+print(result)
