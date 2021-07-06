@@ -15,7 +15,7 @@ def form(input):
       list3.append(list2)
     elif n > 1:
       for m in range(n-1):
-        i = int(list2[m])+int(list2[m+1])
+        i = list2[m]+list2[m+1]
         list1.append(i)
       list1.append(1)
       list2 = list1[:]
