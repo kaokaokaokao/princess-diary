@@ -1,23 +1,24 @@
-input = input("give me some numbers\n")
+ysh = input("give me some numbers")
 
-a = input.split(",")
-input = []
+a = ysh.split(",")
+douche = []
 for n in a:
-  input.append(int(n))
+  douche.append(int(n))
+  print (n)
 
-def quick_sort(input):
-  if len(input) >= 2:
-    ref = input[0]
+def quick_sort(asshole):
+  if len(asshole) >= 2:
+    ref = asshole[0]
     left = []
     right = []
-    input.remove(input[0])
-    for n in input:
+    asshole.remove(ref)
+    for n in asshole:
       if n <= ref:
         left.append(n)
       else:
         right.append(n)
     return quick_sort(left) + [ref] + quick_sort(right)
   else : 
-    return input
+    return asshole
 
-print(quick_sort(input))
+print(quick_sort(douche))
