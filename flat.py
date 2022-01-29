@@ -11,3 +11,12 @@ def flat(m):
   return list1
 
 print(flat(arr))
+
+def not_same(list1):
+  list2 = []
+  for j in list1:
+    if j not in list2:
+      list2.append(j)
+  return list2
+
+print(not_same(flat(arr)))
