@@ -1,4 +1,4 @@
 # princess-diary
 python
 
-ysh is stupid :p
+ysh is smart :p
