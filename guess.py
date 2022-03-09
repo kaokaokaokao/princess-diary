@@ -18,13 +18,13 @@ def guess(number):
   A = 0
   B = 0
   for j in range(len(number)):
+    print(number[j],list1[j])
     if number[j] == list1[j]:
       A += 1
-      print(A,"A")
-    elif number[j] in result:
+      result.remove(number[j])
+    elif int(number[j]) in result:
       B += 1
-      print(B,"B")
   return A,B
 
-out=guess(m)
-print(out[0],"A")
+out = guess(m)
+print(out[0],"A",out[1],"B")
