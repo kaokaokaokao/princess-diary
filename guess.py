@@ -1,7 +1,7 @@
 #位置对，数字对A
 #数字对，位置不对B
 import random
-M = input("guess the numbers?")
+m = input("guess the numbers?")
 
 def random_number():
   answer = set()
@@ -11,15 +11,15 @@ def random_number():
 result = random_number()
 print(result)
 
-def guess(result):
-    A = 0
-    B = 0
-  for j in range(M):
-    if M[j] == result[j]:
+def guess(number):
+  A = 0
+  B = 0
+  for j in range(len(m)):
+    if m[j] == number[j]:
       A+=1
-    elif M[j] in result:
+    elif m[j] in number:
       B+=1
   return A,B
 
-guess(M)
-print(guess(M)[0],"A")
+out=guess(m)
+print(out[0],"A")
