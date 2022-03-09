@@ -4,10 +4,9 @@ import random
 M = input("guess the numbers?")
 
 def random_number():
-  answer = []
-  for i in range(4):
-    answer.append(random.randint(0,9))
-    i+=1
+  answer = set()
+  while len(answer)<4:
+    answer.add(random.randint(0,9))
   return answer
 result = random_number()
 print(result)
