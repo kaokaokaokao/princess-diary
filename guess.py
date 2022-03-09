@@ -11,15 +11,13 @@ def random_number():
 result = random_number()
 print(result)
 
-def guess(answer):
-  for j in range(int(M)):
+def guess(result):
     A = 0
     B = 0
-    j = 0
-    if M[j] == answer[j]:
+  for j in range(M):
+    if M[j] == result[j]:
       A+=1
-      j+=1
-    else:
+    elif M[j] in result:
       B+=1
   return A,B
 
