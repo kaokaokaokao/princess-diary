@@ -9,16 +9,21 @@ def random_number():
     answer.add(random.randint(0,9))
   return answer
 result = random_number()
-print(result)
+list1 = []
+for i in result:
+  list1.append(i)
+print(list1)
 
 def guess(number):
   A = 0
   B = 0
-  for j in range(len(m)):
-    if m[j] == number[j]:
-      A+=1
-    elif m[j] in number:
-      B+=1
+  for j in range(len(number)):
+    if number[j] == list1[j]:
+      A += 1
+      print(A,"A")
+    elif number[j] in result:
+      B += 1
+      print(B,"B")
   return A,B
 
 out=guess(m)
