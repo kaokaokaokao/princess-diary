@@ -1,10 +1,9 @@
-ysh = input("give me some numbers")
+ysh = input("give me some numbers ")
 
 a = ysh.split(",")
 douche = []
 for n in a:
   douche.append(int(n))
-  print (n)
 
 def quick_sort(asshole):
   if len(asshole) >= 2:
