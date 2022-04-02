@@ -1,4 +1,4 @@
-arr = [3,7,2,9,8,6,1]
+arr = [6,9,3,0,5,8,7]
 
 def merge_sort(left,right):
   result = []
