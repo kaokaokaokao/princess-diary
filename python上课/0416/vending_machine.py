@@ -1,5 +1,5 @@
 stock = ["农夫山泉","可口可乐","水溶c100","东方树叶","尖叫"]
-actual_stock = ["农夫山泉","可口可乐","水溶c100","东方树叶","尖叫"]
+actual_stock = stock[:]
 price = [2,5,6,5,4]
 total_price = 0
 print(stock)
@@ -20,5 +20,7 @@ while True:
         actual_stock.remove(customer)
       elif confirm == "否":
         pass
-    else:
+    elif customer not in actual_stock and customer in stock:
       print("非常抱歉，该物品已售罄")
+    else:
+      print("请重新输入")
