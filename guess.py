@@ -1,17 +1,14 @@
 #位置对，数字对A
 #数字对，位置不对B
 import random
-def random_number():
-  answer = set()
-  while len(answer)<4:
-    answer.add(random.randint(0,9))
-  return answer
-result = random_number()
-list1 = []
-for i in result:
-  list1.append(i)
 
 def guess():
+  result = set()
+  while len(result)<4:
+    result.add(random.randint(0,9))
+  list1 = []
+  for i in result:
+    list1.append(i)
   while True:
     A = 0
     B = 0
