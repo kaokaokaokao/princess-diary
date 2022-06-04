@@ -23,8 +23,8 @@ like_list = []
 text_list = []
 
 try:
-    for i in range(0,10):
-        url = f'https://movie.douban.com/subject/1889243/comments?start={i*20}&limit=20&status=P&sort=new_score' #我没看出来网址有啥区别，您看看？
+    for i in range(0,200,20):
+        url = 'https://movie.douban.com/subject/3649049/comments?start={0}&limit=20&status=P&sort=new_score'.format(i)
         # url = f'https://movie.douban.com/subject/1889243/comments?status=P'
         response = requests.get(url, headers=header)
         print(response)
@@ -46,7 +46,12 @@ try:
         time_list.extend(time_)
         like_list.extend(like)
         text_list.extend(txt)
-        print(f'已经完成第{i+1}页爬取')
+        print(f'已经完成第{i//20+1}页爬取')
+        print(len(name_list))
+        print(len(star_list))
+        print(len(time_list))
+        print(len(like_list))
+        print(len(text_list)) 
         time.sleep(random.randint(10,20))
 except Exception as f:
     print(f)
@@ -60,4 +65,5 @@ finally:
         'Review' : text_list
     }
     df = pd.DataFrame.from_dict(dic,orient='index').T #这边如果不加from_dict和orient会报错，加T只是因为我觉得竖着比较好看
-    df.to_csv("douban_review-interstellar.csv",encoding='utf-8-sig') #写入csv时一定要写encoding='utf-8-sig'语句
+    print(df)
+    df.to_csv("/Users/hukeer/Desktop/十三钗影评.csv",encoding='utf-8-sig') #写入csv时一定要写encoding='utf-8-sig'语句
