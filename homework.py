@@ -1,32 +1,34 @@
-def number_generator(major):
-    if major == 'computer':
-        x = 61
-    elif major == 'japanese':
-        x = 56
-    major_number = []
-    for i in range(1,x+1):
-        number = ''
-        A = B = 0
-        number += '20220902'
-        if i in range(1,10):
-            number += '00' + str(i)
-        else:
-            number += '0' + str(i)
-        for k in number:
-            A += int(k)
-        while A not in range(1,10):
-            temp1 = 0
-            for m in str(A):
-                temp1 += int(m) 
-            A = temp1  
-        B = number[-1] + number[-2] + number[-3]
-        while B not in range(1,10):
-            temp2 = 0
-            for n in str(B):
-                temp2 += int(n)
-            B = temp2
-        number += str(A%B)
-        major_number.append(number)
-    return major_number
+import random
+f = open("/Users/hukeer/Desktop/stu2.txt",encoding="utf-8")
+stu = f.read()
+stu = stu.split("\n")
+f.close()
+print(random.choices(stu, k=5))
 
-print(f'计算机专业学号: {number_generator("computer")} \n日语专业学号: {number_generator("japanese")}')
+f2 = open("/Users/hukeer/Desktop/scores.txt",encoding="utf-8")
+scores = f2.read()
+scores = scores.split("\n")
+f2.close()
+f3 = open("/Users/hukeer/Desktop/scored.txt",'w',encoding="utf-8")
+A ,B ,C ,D ,E ,total = 0,0,0,0,0,0
+for score in scores:
+    temp = score.split("\t")
+    grade = int(temp[1])*.4 + int(temp[2])*.6
+    score = temp[0] + '\t' + str(grade)
+    total += grade
+    f3.write(score+"\n")
+    if grade >= 90:
+        A += 1
+    elif grade >= 80:
+        B += 1
+    elif grade >= 70:
+        C += 1
+    elif grade >= 60:
+        D += 1
+    else:
+        E += 1
+f3.close()
+member = len(scores)
+aver = total/member
+print(f'学生总人数为:{member}\n90分以上人数为:{A}\n80至89分人数为:{B}\n70至79分人数为:{C}\n60至69分人数为:{D}\n60分以下人数为:{E}\n平均分为:{aver:.2f}')
+

@@ -66,4 +66,4 @@ finally:
     }
     df = pd.DataFrame.from_dict(dic,orient='index').T #这边如果不加from_dict和orient会报错，加T只是因为我觉得竖着比较好看
     print(df)
-    df.to_csv("/Users/hukeer/Desktop/十三钗影评.csv",encoding='utf-8-sig') #写入csv时一定要写encoding='utf-8-sig'语句
+    df.to_csv("/Users/hukeer/Desktop/影评.csv",encoding='utf-8-sig') #写入csv时一定要写encoding='utf-8-sig'语句
